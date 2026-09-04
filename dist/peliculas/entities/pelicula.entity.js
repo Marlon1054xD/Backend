@@ -13,6 +13,7 @@ exports.Pelicula = void 0;
 const typeorm_1 = require("typeorm");
 const genero_entity_1 = require("../../generos/entities/genero.entity");
 const director_entity_1 = require("../../directores/entities/director.entity");
+const favorito_entity_1 = require("../../favoritos/entities/favorito.entity");
 let Pelicula = class Pelicula {
     id;
     titulo;
@@ -20,6 +21,7 @@ let Pelicula = class Pelicula {
     duracion;
     genero;
     director;
+    favoritos;
 };
 exports.Pelicula = Pelicula;
 __decorate([
@@ -52,6 +54,10 @@ __decorate([
     (0, typeorm_1.JoinColumn)({ name: 'director_id' }),
     __metadata("design:type", director_entity_1.Director)
 ], Pelicula.prototype, "director", void 0);
+__decorate([
+    (0, typeorm_1.OneToMany)(() => favorito_entity_1.Favorito, (favorito) => favorito.pelicula),
+    __metadata("design:type", Array)
+], Pelicula.prototype, "favoritos", void 0);
 exports.Pelicula = Pelicula = __decorate([
     (0, typeorm_1.Entity)('peliculas')
 ], Pelicula);

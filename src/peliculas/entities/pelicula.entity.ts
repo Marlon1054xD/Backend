@@ -3,11 +3,13 @@ import {
   Entity,
   JoinColumn,
   ManyToOne,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
 
 import { Genero } from '../../generos/entities/genero.entity';
 import { Director } from '../../directores/entities/director.entity';
+import { Favorito } from '../../favoritos/entities/favorito.entity';
 
 @Entity('peliculas')
 export class Pelicula {
@@ -34,4 +36,7 @@ export class Pelicula {
   })
   @JoinColumn({ name: 'director_id' })
   director!: Director;
+
+  @OneToMany(() => Favorito, (favorito) => favorito.pelicula)
+  favoritos!: Favorito[];
 }

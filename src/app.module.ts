@@ -2,12 +2,16 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GenerosModule } from './generos/generos.module';
 import { DirectoresModule } from './directores/directores.module';
 import { PeliculasModule } from './peliculas/peliculas.module';
+import { SuscripcionesModule } from './suscripciones/suscripciones.module';
+import { UsuariosModule } from './usuarios/usuarios.module';
+import { PerfilesModule } from './perfiles/perfiles.module';
+import { FavoritosModule } from './favoritos/favoritos.module';
+
 
 @Module({
   imports: [
@@ -33,10 +37,12 @@ import { PeliculasModule } from './peliculas/peliculas.module';
     }),
 
     GenerosModule,
-
     DirectoresModule,
-
     PeliculasModule,
+    SuscripcionesModule,
+    UsuariosModule,
+    PerfilesModule,
+    FavoritosModule,
   ],
 
   controllers: [AppController],
