@@ -1,6 +1,7 @@
 import { Pelicula } from '../../peliculas/entities/pelicula.entity';
-export declare class Genero {
+export declare class Director {
     id: number;
     nombre: string;
+    apellido: string;
     peliculas: Pelicula[];
 }

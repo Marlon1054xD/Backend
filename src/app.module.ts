@@ -6,6 +6,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GenerosModule } from './generos/generos.module';
+import { DirectoresModule } from './directores/directores.module';
+import { PeliculasModule } from './peliculas/peliculas.module';
 
 @Module({
   imports: [
@@ -31,6 +33,10 @@ import { GenerosModule } from './generos/generos.module';
     }),
 
     GenerosModule,
+
+    DirectoresModule,
+
+    PeliculasModule,
   ],
 
   controllers: [AppController],

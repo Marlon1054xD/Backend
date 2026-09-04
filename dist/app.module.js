@@ -13,6 +13,8 @@ const typeorm_1 = require("@nestjs/typeorm");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const generos_module_1 = require("./generos/generos.module");
+const directores_module_1 = require("./directores/directores.module");
+const peliculas_module_1 = require("./peliculas/peliculas.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -37,6 +39,8 @@ exports.AppModule = AppModule = __decorate([
                 }),
             }),
             generos_module_1.GenerosModule,
+            directores_module_1.DirectoresModule,
+            peliculas_module_1.PeliculasModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
