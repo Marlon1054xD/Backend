@@ -15,6 +15,10 @@ const app_service_1 = require("./app.service");
 const generos_module_1 = require("./generos/generos.module");
 const directores_module_1 = require("./directores/directores.module");
 const peliculas_module_1 = require("./peliculas/peliculas.module");
+const suscripciones_module_1 = require("./suscripciones/suscripciones.module");
+const usuarios_module_1 = require("./usuarios/usuarios.module");
+const perfiles_module_1 = require("./perfiles/perfiles.module");
+const favoritos_module_1 = require("./favoritos/favoritos.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -41,6 +45,10 @@ exports.AppModule = AppModule = __decorate([
             generos_module_1.GenerosModule,
             directores_module_1.DirectoresModule,
             peliculas_module_1.PeliculasModule,
+            suscripciones_module_1.SuscripcionesModule,
+            usuarios_module_1.UsuariosModule,
+            perfiles_module_1.PerfilesModule,
+            favoritos_module_1.FavoritosModule,
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

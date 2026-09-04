@@ -9,15 +9,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PeliculasModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const pelicula_entity_1 = require("./entities/pelicula.entity");
 const peliculas_controller_1 = require("./peliculas.controller");
 const peliculas_service_1 = require("./peliculas.service");
+const pelicula_entity_1 = require("./entities/pelicula.entity");
+const genero_entity_1 = require("../generos/entities/genero.entity");
+const director_entity_1 = require("../directores/entities/director.entity");
 let PeliculasModule = class PeliculasModule {
 };
 exports.PeliculasModule = PeliculasModule;
 exports.PeliculasModule = PeliculasModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([pelicula_entity_1.Pelicula])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([
+                pelicula_entity_1.Pelicula,
+                genero_entity_1.Genero,
+                director_entity_1.Director,
+            ]),
+        ],
         controllers: [peliculas_controller_1.PeliculasController],
         providers: [peliculas_service_1.PeliculasService],
     })
