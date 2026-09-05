@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { Genero } from './entities/genero.entity';
-import { GenerosController } from './generos.controller';
 import { GenerosService } from './generos.service';
+import { GenerosController } from './generos.controller';
+import { Genero } from './entities/genero.entity';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Genero])],
+  imports: [
+    TypeOrmModule.forFeature([Genero]),
+  ],
   controllers: [GenerosController],
   providers: [GenerosService],
 })
