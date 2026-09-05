@@ -1,4 +1,56 @@
-import { Controller } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  ParseIntPipe,
+  Patch,
+  Post,
+} from '@nestjs/common';
+
+import { DirectoresService } from './directores.service';
+import { CreateDirectorDto } from './dto/create-director.dto';
+import { UpdateDirectorDto } from './dto/update-director.dto';
 
 @Controller('directores')
-export class DirectoresController {}
+export class DirectoresController {
+  constructor(
+    private readonly directoresService: DirectoresService,
+  ) {}
+
+  @Post()
+  create(@Body() createDirectorDto: CreateDirectorDto) {
+    return this.directoresService.create(createDirectorDto);
+  }
+
+  @Get()
+  findAll() {
+    return this.directoresService.findAll();
+  }
+
+  @Get(':id')
+  findOne(
+    @Param('id', ParseIntPipe) id: number,
+  ) {
+    return this.directoresService.findOne(id);
+  }
+
+  @Patch(':id')
+  update(
+    @Param('id', ParseIntPipe) id: number,
+    @Body() updateDirectorDto: UpdateDirectorDto,
+  ) {
+    return this.directoresService.update(
+      id,
+      updateDirectorDto,
+    );
+  }
+
+  @Delete(':id')
+  remove(
+    @Param('id', ParseIntPipe) id: number,
+  ) {
+    return this.directoresService.remove(id);
+  }
+}

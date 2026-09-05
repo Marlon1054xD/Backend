@@ -9,15 +9,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GenerosModule = void 0;
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
-const genero_entity_1 = require("./entities/genero.entity");
-const generos_controller_1 = require("./generos.controller");
 const generos_service_1 = require("./generos.service");
+const generos_controller_1 = require("./generos.controller");
+const genero_entity_1 = require("./entities/genero.entity");
 let GenerosModule = class GenerosModule {
 };
 exports.GenerosModule = GenerosModule;
 exports.GenerosModule = GenerosModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([genero_entity_1.Genero])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([genero_entity_1.Genero]),
+        ],
         controllers: [generos_controller_1.GenerosController],
         providers: [generos_service_1.GenerosService],
     })

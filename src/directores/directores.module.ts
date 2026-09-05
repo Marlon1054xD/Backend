@@ -6,7 +6,9 @@ import { DirectoresController } from './directores.controller';
 import { DirectoresService } from './directores.service';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Director])],
+  imports: [
+    TypeOrmModule.forFeature([Director]),
+  ],
   controllers: [DirectoresController],
   providers: [DirectoresService],
 })

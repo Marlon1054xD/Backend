@@ -17,7 +17,9 @@ let DirectoresModule = class DirectoresModule {
 exports.DirectoresModule = DirectoresModule;
 exports.DirectoresModule = DirectoresModule = __decorate([
     (0, common_1.Module)({
-        imports: [typeorm_1.TypeOrmModule.forFeature([director_entity_1.Director])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([director_entity_1.Director]),
+        ],
         controllers: [directores_controller_1.DirectoresController],
         providers: [directores_service_1.DirectoresService],
     })
